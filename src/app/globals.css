@@ -75,12 +75,64 @@
   }
 }
 
-background: #154734;
-background: #B38F50;
-background: #000000;
-background: #FFFFFF;
-background: #656565;
-background: #D9D9D9;
-background: #404040;
-background: #8E8D94;
-background: #9747FF;
+/* background colors to different elements */
+.element1 {
+  background: #154734;
+}
+
+.element2 {
+  background: #B38F50;
+}
+
+.element3 {
+  background: #000000;
+}
+
+.element4 {
+  background: #FFFFFF;
+}
+
+.element5 {
+  background: #656565;
+}
+
+.element6 {
+  background: #D9D9D9;
+}
+
+.element7 {
+  background: #404040;
+}
+
+.element8 {
+  background: #8E8D94;
+}
+
+.element9 {
+  background: #9747FF;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  background-color: #9747FF; /* Change this to your desired color */
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.bg-image {
+  background-image: url('C:/CalPolyAcademics/Fall 2023/CSC484-UI+UX/484_ChatBot/src/assets/logo.png'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.relative {
+  position: relative;
+}

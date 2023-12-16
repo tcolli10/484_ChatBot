@@ -1,4 +1,7 @@
+'use client';
+import ChatButton from "@/components/ui/ChatButton";
 import Image from "../../node_modules/next/image";
+import websiteImage from "@/assets/CSC_484_ss_chatbot.png";
 
 export default function Home() {
   return (
@@ -22,6 +25,15 @@ export default function Home() {
               <span>GIVING</span>
             </div>
           </div>
+      </div>
+
+      <div className="flex items-center justify-center flex-grow">
+        {/* Centered image */}
+        <Image src={websiteImage} alt="Logo" width={1000} height={1000} />
+      </div>
+
+      <div>
+        <ChatButton />
       </div>
     </main>
   )
