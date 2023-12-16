@@ -16,7 +16,7 @@ export default function ChatButton(){
             variant="default"
             onClick={() => setChatbotBoxOpen(true)}
           >
-            {/* Use the Image component as the background */}
+            {/* use logo image as the background */}
             <Image
               src={backgroundImage}
               alt="Background Image"
