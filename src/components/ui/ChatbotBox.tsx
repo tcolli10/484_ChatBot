@@ -1,6 +1,6 @@
 import {useChat} from "ai/react"
 import {cn} from "@/lib/utils"
-import { XCircle } from "lucide-react";
+import { X, SendHorizonal } from "lucide-react";
 import { Input } from "./input";
 
 interface ChatbotBoxProps{
@@ -24,8 +24,8 @@ export default function ChatbotBox({open, onClose}: ChatbotBoxProps){
         "bottom-0 right-0 z-10 w-[25%] max-w-[50%] p-1", 
         open ? "fixed" : "hidden"
     )}>
-        <button onClick={onClose} className="mb-1 ms-auto block">
-            <XCircle size={30} />
+        <button onClick={onClose} className="mb-1 ms-auto block left-0 top-0">
+            <X size={30} />
         </button>
         <div className="flex h-[600px] flex-col rounded bg-background border shadow-xl">
             <div className="h-full">Messages</div>
@@ -35,6 +35,9 @@ export default function ChatbotBox({open, onClose}: ChatbotBoxProps){
                     onChange={handleInputChange}
                     placeholder="Type something..."
                 />
+                <button type="submit">
+                    <SendHorizonal size={30}/>
+                </button>
             </form>
         </div>
     </div>
