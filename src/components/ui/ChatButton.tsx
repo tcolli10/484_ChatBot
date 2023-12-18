@@ -4,7 +4,7 @@ import ChatbotBox from "./ChatbotBox";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-import backgroundImage from "C:/CalPolyAcademics/Fall 2023/CSC484-UI+UX/484_ChatBot/src/assets/logo.png";
+import backgroundImage from "../../assets/logo.png";
 
 
 export default function ChatButton(){
