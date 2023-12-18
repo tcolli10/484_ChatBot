@@ -1,7 +1,7 @@
 'use client';
 import ChatButton from "@/components/ui/ChatButton";
 import Image from "../../node_modules/next/image";
-import websiteImage from "@/assets/CSC_484_ss_chatbot.png";
+import websiteImage from "../../public/CSC_484_ss_chatbot.png";
 
 export default function Home() {
   return (

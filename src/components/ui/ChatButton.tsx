@@ -4,7 +4,7 @@ import ChatbotBox from "./ChatbotBox";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-import backgroundImage from "../../assets/logo.png";
+import backgroundImage from "../../../public/logo.png";
 
 
 export default function ChatButton(){
