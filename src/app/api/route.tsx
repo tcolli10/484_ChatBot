@@ -1,5 +1,4 @@
 import { getVectorEmbedding } from "@/lib/openai";
-import { Content } from "next/font/google";
 
 //possibly use this to add in new information
 

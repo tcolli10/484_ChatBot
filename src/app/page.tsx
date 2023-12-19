@@ -28,7 +28,7 @@ export default function Home() {
       </div>
 
       <div className="flex items-center justify-center flex-grow">
-        {/* Centered image */}
+        {/* centered image */}
         <Image src={websiteImage} alt="Logo" width={1000} height={1000} />
       </div>
 

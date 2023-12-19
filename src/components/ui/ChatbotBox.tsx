@@ -8,8 +8,8 @@ interface ChatbotBoxProps{
     onClose:() => void;
 }
 
-  // handles + navigates to corresponding chatbot flow
-  const handleButtonClick = (buttonText: string) => {
+// handles + navigates to corresponding chatbot flow
+const handleButtonClick = (buttonText: string) => {
     switch (buttonText) {
         case "Option 1":
             break;
@@ -20,17 +20,13 @@ interface ChatbotBoxProps{
         default:
             break;
     }
-  };
+};
 
 export default function ChatbotBox({open, onClose}: ChatbotBoxProps){
     const {
-        messages,
         input, 
         handleInputChange,
         handleSubmit,
-        setMessages,
-        isLoading,
-        error
     } = useChat();
 
     return <div className={cn(
