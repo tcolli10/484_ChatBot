@@ -8,6 +8,19 @@ interface ChatbotBoxProps{
     onClose:() => void;
 }
 
+  // handles + navigates to corresponding chatbot flow
+  const handleButtonClick = (buttonText: string) => {
+    switch (buttonText) {
+        case "Option 1":
+            break;
+        case "Option 2":
+            break;
+        case "Option 3":
+            break;
+        default:
+            break;
+    }
+  };
 
 export default function ChatbotBox({open, onClose}: ChatbotBoxProps){
     const {
@@ -28,7 +41,27 @@ export default function ChatbotBox({open, onClose}: ChatbotBoxProps){
             <X size={30} />
         </button>
         <div className="flex h-[600px] flex-col rounded bg-background border shadow-xl">
-            <div className="h-full">Messages</div>
+            <div className="h-full">Hello there! How can I help?</div>
+            <div className="flex gap-2 p-2">
+                <button 
+                onClick={() => handleButtonClick("Option 1")}
+                className="border border-black bg-gray-300 px-4 py-2 rounded-lg"
+                >
+                    How do I get internship credit?
+                </button>
+                <button 
+                onClick={() => handleButtonClick("Option 2")}
+                className="border border-black bg-gray-300 px-4 py-2 rounded-lg"
+                >
+                    How do I find a professor's office hours?
+                </button>
+                <button
+                onClick={() => handleButtonClick("Option 3")}
+                className="border border-black bg-gray-300 px-4 py-2 rounded-lg"
+                >
+                    How do I get a permission number?
+                </button>
+            </div>
             <form onSubmit={handleSubmit} className="m-3 flex gap-1">
                 <Input
                     value={input}
