@@ -1,6 +1,6 @@
 import {useChat} from "ai/react"
 import {cn} from "@/lib/utils"
-import { X, SendHorizonal } from "lucide-react";
+import { X, SendHorizonal, Maximize2, Minimize2 } from "lucide-react";
 import { Input } from "./input";
 
 
@@ -43,14 +43,30 @@ export default function ChatbotBox({open, onClose}: ChatbotBoxProps){
         setMessages
     } = useChat();
 
+    const maximizeWindow = () => {
+        window.resizeTo(screen.width, screen.height);
+      };
+    
+    const minimizeWindow = () => {
+        window.resizeTo(400, 608);
+    };
+
     return <div className={cn(
         "bottom-0 right-0 z-10 w-[25%] max-w-[50%] p-1", 
         open ? "fixed" : "hidden"
     )}>
-        <button onClick={onClose} className="mb-1 ms-auto block left-0 top-0">
-            <X size={30} />
-        </button>
         <div className="flex h-[600px] flex-col rounded bg-background border shadow-xl">
+            <div className="flex justify-between m-3">
+            <button onClick={maximizeWindow}>
+                <Maximize2 size={30} />
+            </button>
+            {/* <button onClick={minimizeWindow}>
+                <Minimize2 size={30} />
+            </button> */}
+            <button onClick={onClose} className="mb-1 ms-auto block left-0 top-0">
+                <X size={30} />
+            </button>
+            </div> 
             <div className="h-full flex flex-col justify-center items-center">
                 <img
                     src="logo.png"
