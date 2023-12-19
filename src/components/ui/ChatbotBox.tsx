@@ -3,7 +3,7 @@ import {cn} from "@/lib/utils"
 import { X, SendHorizonal, Maximize2, Minimize2 } from "lucide-react";
 import { Input } from "./input";
 import Image from "next/image";
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import { ChatBubble } from "./ChatBubble";
 
 
@@ -31,6 +31,7 @@ export default function ChatbotBox({open, onClose}: ChatbotBoxProps){
     const [showIntershipQuestions, setShowInternshipQuestions] = useState(false);
     const [showOfficeHoursQuestions, setShowOfficeHoursQuestions] = useState(false);
     const [showPermissionNumberQuestions, setShowPermissionNUmberQuestions] = useState(false);
+    const [userText, setUserText] = useState<string | null>(null)
 
 
     const maximizeWindow = () => {
@@ -46,6 +47,7 @@ export default function ChatbotBox({open, onClose}: ChatbotBoxProps){
         setShowInternshipQuestions(false)
         setShowOfficeHoursQuestions(false)
         setShowPermissionNUmberQuestions(false)
+        setUserText(null)
         onClose()
     }
 
@@ -79,6 +81,16 @@ export default function ChatbotBox({open, onClose}: ChatbotBoxProps){
                 break;
         }
     };
+
+    const handleTextSubmit = (event: SyntheticEvent, text: string): void => {
+        event.preventDefault()
+        setAtStart(false)
+        setShowInternshipQuestions(false)
+        setShowOfficeHoursQuestions(false)
+        setShowPermissionNUmberQuestions(false)
+        setUserText(text)
+
+    }
 
     return <div className={cn(
         "bottom-0 right-0 z-10 w-[25%] max-w-[50%] p-1", 
@@ -152,9 +164,16 @@ export default function ChatbotBox({open, onClose}: ChatbotBoxProps){
                     </div>
                 </div>
             }
+            {userText && 
+                <div className='h-3/4 flex flex-col-reverse'>
+                    <div className="flex justify-end mr-2">
+                        <ChatBubble message={userText} />
+                    </div>
+                </div>
+            }
 
             
-            <form onSubmit={handleSubmit} className="m-3 flex gap-1">
+            <form onSubmit={(event) => handleTextSubmit(event, input)} className="m-3 flex gap-1">
                 <Input
                     value={input}
                     onChange={handleInputChange}
