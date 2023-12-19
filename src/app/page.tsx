@@ -1,7 +1,9 @@
 'use client';
+import { ChatBubble } from "@/components/ui/ChatBubble";
 import ChatButton from "@/components/ui/ChatButton";
 import Image from "../../node_modules/next/image";
 import websiteImage from "../../public/CSC_484_ss_chatbot.png";
+
 
 export default function Home() {
   return (
@@ -31,6 +33,7 @@ export default function Home() {
         {/* centered image */}
         <Image src={websiteImage} alt="Logo" width={1000} height={1000} />
       </div>
+      <ChatBubble/>
 
       <div>
         <ChatButton />

@@ -20,6 +20,7 @@ module.exports = {
         'cp-dark-green':'#003831',
         'darker-gray-header':'#F8F8F7',
         'cp-dark-gold':'#B38F4F',
+        'chat-bubble-green':'#154734',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

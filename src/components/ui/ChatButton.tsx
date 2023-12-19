@@ -15,6 +15,7 @@ export default function ChatButton(){
           <Button
             variant="default"
             onClick={() => setChatbotBoxOpen(true)}
+            size='sm'
           >
             {/* use logo image as the background */}
             <Image
