@@ -10,10 +10,22 @@ interface ChatbotBoxProps{
 }
 
 // handles + navigates to corresponding chatbot flow
-const handleButtonClick = (buttonText: string) => {
+const handleButtonClick = (buttonText: string, setMessages: any) => {
     switch (buttonText) {
         case "Option 1":
-            break;
+            setMessages([
+                {
+                  text:
+                    "With the 2022-2025 catalog, CSC 493 has been modified to allow degree credit.",
+                  fromUser: false,
+                },
+                {
+                  text:
+                    "The degree programs (CSC and SE) are updated to include this course in the technical elective listings.",
+                  fromUser: false,
+                },
+              ]);
+              break;
         case "Option 2":
             break;
         case "Option 3":
@@ -28,6 +40,7 @@ export default function ChatbotBox({open, onClose}: ChatbotBoxProps){
         input, 
         handleInputChange,
         handleSubmit,
+        setMessages
     } = useChat();
 
     return <div className={cn(
@@ -49,19 +62,19 @@ export default function ChatbotBox({open, onClose}: ChatbotBoxProps){
             </div>
             <div className="flex gap-2 p-2">
                 <button 
-                onClick={() => handleButtonClick("Option 1")}
+                onClick={() => handleButtonClick("Option 1", setMessages)}
                 className="border border-black bg-gray-300 px-4 py-2 rounded-lg"
                 >
                     How do I get internship credit?
                 </button>
                 <button 
-                onClick={() => handleButtonClick("Option 2")}
+                onClick={() => handleButtonClick("Option 2", setMessages)}
                 className="border border-black bg-gray-300 px-4 py-2 rounded-lg"
                 >
                     How do I find a professor's office hours?
                 </button>
                 <button
-                onClick={() => handleButtonClick("Option 3")}
+                onClick={() => handleButtonClick("Option 3", setMessages)}
                 className="border border-black bg-gray-300 px-4 py-2 rounded-lg"
                 >
                     How do I get a permission number?
