@@ -3,6 +3,7 @@ import {cn} from "@/lib/utils"
 import { X, SendHorizonal } from "lucide-react";
 import { Input } from "./input";
 
+
 interface ChatbotBoxProps{
     open: boolean;
     onClose:() => void;
@@ -37,7 +38,15 @@ export default function ChatbotBox({open, onClose}: ChatbotBoxProps){
             <X size={30} />
         </button>
         <div className="flex h-[600px] flex-col rounded bg-background border shadow-xl">
-            <div className="h-full">Hello there! How can I help?</div>
+            <div className="h-full flex flex-col justify-center items-center">
+                <img
+                    src="logo.png"
+                    alt="Image of the chatbot logo"
+                    className="mb-2" 
+                />
+                <div>Hello there!</div>
+                <div>How can I help?</div>
+            </div>
             <div className="flex gap-2 p-2">
                 <button 
                 onClick={() => handleButtonClick("Option 1")}
